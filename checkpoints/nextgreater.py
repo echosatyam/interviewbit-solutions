@@ -35,5 +35,5 @@ class Solution:
         for i in range(n):
             G[i] = findGreater(A,i,n)
         return G
-solution = Solution
+solution = Solution()
 print(solution.nextGreater(solution,[1,2,3,4,6,7,20]))
