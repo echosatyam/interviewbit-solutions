@@ -17,7 +17,7 @@ typedef struct ListNode listnode;
 
 listnode* deleteDuplicates(listnode* A) {
     if(A==NULL){
-        return
+        return;
     }
     listnode* temp = A;
     while(temp->next!=NULL){
