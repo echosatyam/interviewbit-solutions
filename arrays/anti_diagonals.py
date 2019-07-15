@@ -41,23 +41,23 @@ class Solution:
     # @return a list of list of integers
     def diagonal(self, A):
         n = len(A)
-        R=[]
+        R = []
         for i in range(2*n-1):
-            B=[]
-            counter = i 
-            if i<n:
+            B = []
+            counter = i
+            if i < n:
                 start = 0
                 end = counter
-                while(start<n and end>-1):
+                while(start < n and end > -1):
                     B.append(A[start][end])
-                    start+=1
-                    end-=1
+                    start += 1
+                    end -= 1
             else:
                 start = counter-n+1
-                end  = n-1
-                while(start<n and end>-1):
+                end = n-1
+                while(start < n and end > -1):
                     B.append(A[start][end])
-                    start+=1
-                    end-=1
+                    start += 1
+                    end -= 1
             R.append(B)
         return R

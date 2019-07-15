@@ -11,13 +11,15 @@ Another possible answer : [4, 1, 3, 2]
  NOTE : If there are multiple answers possible, return the one thats lexicographically smallest. 
 So, in example case, you will return [2, 1, 4, 3] 
 '''
+
+
 class Solution:
     # @param A : list of integers
     # @return a list of integers
     def wave(self, A):
         A = sorted(A)
-        for i in range(0,len(A)-1,2):
+        for i in range(0, len(A)-1, 2):
             temp = A[i]
-            A[i]=A[i+1]
-            A[i+1]=temp
+            A[i] = A[i+1]
+            A[i+1] = temp
         return A

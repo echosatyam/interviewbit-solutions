@@ -12,7 +12,7 @@ def pivot(A, B):
         mid = (high+low)//2
         if mid > 0 and mid < len(A)-1 and A[mid] < A[mid+1] and A[mid] < A[mid-1]:
             return mid
-        elif  A[mid] > A[len(A)-1]:
+        elif A[mid] > A[len(A)-1]:
             low = mid + 1
         else:
             high = mid-1

@@ -8,30 +8,34 @@ Input: AACECAAAA
 Output: 2
 '''
 
+
 class Solution:
-    def computeLPSArray(self,pat): 
-       
+    def computeLPSArray(self, pat):
+
         pat = pat+"+"+pat[::-1]
         M = len(pat)
-        l= 0 
-        lps=[0 for i in range(M)]
+        l = 0
+        lps = [0 for i in range(M)]
         i = 1
-        while i < M: 
-            if pat[i]== pat[l]: 
+        while i < M:
+            if pat[i] == pat[l]:
                 l += 1
                 lps[i] = l
                 i += 1
-            else: 
+            else:
                 if l != 0:
-                    l = lps[l-1] 
-                else: 
+                    l = lps[l-1]
+                else:
                     lps[i] = 0
                     i += 1
         return lps[-1]
+
     def solve(self, A):
-        if(len(A)<=2):
+        if(len(A) <= 2):
             return 0
         n = len(A)
         x = self.computeLPSArray(A)
         return n-x
+
+
 print(Solution().solve("AABA"))

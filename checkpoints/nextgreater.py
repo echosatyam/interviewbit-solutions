@@ -20,20 +20,24 @@ Output : [-1, -1, -1]
 
 '''
 
-def findGreater(A,i,n):
-    for j in range(i,n):
-        if(A[j]>A[i]):
+
+def findGreater(A, i, n):
+    for j in range(i, n):
+        if(A[j] > A[i]):
             return A[j]
     return -1
+
 
 class Solution:
     # @param A : list of integers
     # @return a list of integers
     def nextGreater(self, A):
         n = len(A)
-        G = [ -1 for i in range(n) ]
+        G = [-1 for i in range(n)]
         for i in range(n):
-            G[i] = findGreater(A,i,n)
+            G[i] = findGreater(A, i, n)
         return G
+
+
 solution = Solution()
-print(solution.nextGreater(solution,[1,2,3,4,6,7,20]))
+print(solution.nextGreater(solution, [1, 2, 3, 4, 6, 7, 20]))

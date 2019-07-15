@@ -18,10 +18,10 @@ class Solution:
     # @return a list of list of integers
     def getRow(self, A):
         pascal = [[1 for i in range(j+1)] for j in range(A+1)]
-        
-        if(A>2):
-            for i in range(2,A+1):
-                for j in range(1,i):
-                    pascal[i][j]=pascal[i-1][j-1]+pascal[i-1][j]
+
+        if(A > 2):
+            for i in range(2, A+1):
+                for j in range(1, i):
+                    pascal[i][j] = pascal[i-1][j-1]+pascal[i-1][j]
             print(pascal)
         return pascal[A]
