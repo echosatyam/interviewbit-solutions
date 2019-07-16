@@ -1,25 +1,10 @@
 #include <stdio.h>
-struct ListNode
-{
-    int val;
-    struct ListNode *next;
-};
-
-typedef struct ListNode listnode;
-
-listnode *listnode_new(int val)
-{
-    listnode *node = (listnode *)malloc(sizeof(listnode));
-    node->val = val;
-    node->next = NULL;
-    return node;
-}
-
+#include "header.h"
 listnode *deleteDuplicates(listnode *A)
 {
     if (A == NULL)
     {
-        return;
+        return NULL;
     }
     listnode *temp = A;
     while (temp->next != NULL)
@@ -38,6 +23,12 @@ listnode *deleteDuplicates(listnode *A)
     return A;
 }
 int main()
-{
+{   int a[] = {1, 2, 3, 4,4,5, 5, 6, 7,7,7,7,7,7,8};
+    int n = sizeof(a) / sizeof(a[0]);
+    listnode *head = NULL;
+    head = create_list(head, a, n);
+    print(head);
+    head=deleteDuplicates(head);
+    print(head);
     return 0;
 }
