@@ -2,3 +2,6 @@
 a.out
 .pytest_cache
 test.py
+__test__
+test.c 
+test.py 
